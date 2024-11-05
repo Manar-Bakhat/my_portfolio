@@ -25,21 +25,25 @@
   font-size: 2rem;
   margin-left: -90px;
 }
-.home-text h1{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.home-text h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.home-text .text-style1{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+.home-text .text-style1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 3rem;
   margin-bottom: 0px; 
   margin-top: -20px; 
 }
-.home-text .text-style2{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+.home-text .text-style2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.2rem;
 }
 
 /* Style de l'image */
+.home-image {
+  display: flex; /* Maintenir l'image visible par défaut */
+}
+
 .home-image img {
   max-width: 100%; /* S'adapte à la taille du conteneur */
   height: auto;
@@ -48,6 +52,7 @@
   max-width: 500px; /* Limite la taille maximale de l'image */
   margin-top: -90px;
 }
+
 .contact-button {
   background-color: #000000; /* Couleur de fond du bouton */
   color: white; /* Couleur du texte */
@@ -63,6 +68,7 @@
 .contact-button:hover {
   background-color: #2b2b2b; /* Couleur au survol */
 }
+
 .social-icons {
   display: flex; /* Utiliser flexbox pour aligner les icônes */
   gap: 10px; /* Espace entre les icônes */
@@ -86,4 +92,100 @@
   color: #333; /* Couleur de survol pour GitHub */
 }
 
+/* Réglages pour tablettes et plus petits écrans */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column; /* Mettre le texte et l'image l'un sous l'autre */
+    align-items: center;
+  }
 
+  .home-text {
+    text-align: center; /* Centrer le texte */
+    margin-left: 0;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem; /* Réduire la taille des polices */
+  }
+
+  .home-text .text-style1 {
+    font-size: 2.2rem; /* Ajustement de la taille */
+  }
+
+  .home-text .text-style2 {
+    font-size: 1rem;
+  }
+
+  .home-image img {
+    max-width: 80%; /* Réduire l'image à 80% sur les tablettes */
+    margin-top: 20px;
+  }
+
+  .social-icons {
+    justify-content: center; /* Centrer les icônes sociales */
+    margin-left: 0; /* Supprimer la marge gauche */
+  }
+}
+
+/* Réglages pour téléphones */
+@media (max-width: 1000px) {
+  .home-container {
+    background-size: 100% 400px; /* Ajuster la taille de l'image de fond */
+  }
+
+  .home-image {
+    display: none; /* Cacher l'image pour les petits écrans */
+  }
+
+  .home-text {
+    margin-top: -220px; /* Décale le texte vers le haut */
+    text-align: center; /* Centrer le texte sur petits écrans */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Réduire encore plus les tailles de texte */
+  }
+
+  .home-text .text-style1 {
+    font-size: 1.8rem;
+  }
+
+  .home-text .text-style2 {
+    font-size: 0.9rem;
+  }
+
+  .contact-button {
+    padding: 10px 20px; /* Ajuster l'espacement du bouton sur mobile */
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem; /* Réduire la taille des icônes sur mobile */
+  }
+}
+
+/* Réglages pour petits téléphones */
+@media (max-width: 580px) {
+
+  .home-text {
+    margin-top: -220px; /* Décale le texte vers le haut */
+    text-align: center; /* Centrer le texte sur petits écrans */
+  }
+  
+  .home-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-text .text-style1 {
+    font-size: 1.5rem;
+  }
+
+  .home-text .text-style2 {
+    font-size: 0.8rem;
+  }
+
+  .contact-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

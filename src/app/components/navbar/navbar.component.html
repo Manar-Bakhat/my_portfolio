@@ -1,7 +1,9 @@
 <nav class="navbar" [ngClass]="{'sticky': isSticky}">
   <div class="navbar-container">
     <img src="../../../assets/images/logo.png" alt="Logo" class="logo" />
-    <ul class="nav-links">
+    <!-- Menu burger pour petits écrans -->
+    <button class="burger-menu" (click)="toggleMenu()">☰</button>
+    <ul class="nav-links" [ngClass]="{'open': isMenuOpen}">
       <li><a href="#">HOME</a></li>
       <li><a href="#">ABOUT</a></li>
       <li><a href="#">SKILLS</a></li>
@@ -10,4 +12,5 @@
     </ul>
   </div>
 </nav>
+
 
