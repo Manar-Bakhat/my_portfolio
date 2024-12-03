@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.skills-section {
+    position: relative;
+    min-height: 80vh;
+    background-image: url('../../../assets/images/bgMor.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+
+.skills-overlay {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.skills-title {
+    font-size: 3rem;
+    margin-bottom: 70px;
+    font-family: Arial, sans-serif;
+}
+
+.skills-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    white-space: pre-line;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.skills-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.skill-item {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin: 20px 0;
+}
+
+.style-skill {
+    font-weight: bold;
+    color: #11a372;
+}
+
+.style-respSkill {
+    color: #333333;
+}
+
+.skills-description br {
+    margin-bottom: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .skills-title {
+        font-size: 2.5rem;
+    }
+
+    .skills-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .skills-title {
+        font-size: 2.2rem;
+    }
+
+    .skills-description {
+        font-size: 1rem;
+    }
+    
+    .skill-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-title {
+        font-size: 2rem;
+    }
+
+    .skills-description {
+        font-size: 1.2rem;
+    }
+    .skills-section {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .skills-title {
+        font-size: 1.8rem;
+    }
+
+    .skills-description {
+        font-size: 2.9rem;
+    }
+
+    .skills-section {
+        padding: 100px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    .skills-title {
+        font-size: 2rem;
+    }
+
+    .skills-description {
+        font-size: 1.2rem;
+    }
+    .skills-section {
+        padding: 80px;
+    }
+}
+

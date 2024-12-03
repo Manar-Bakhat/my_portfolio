@@ -1,0 +1,200 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.about-content {
+  display: flex; /* Utiliser flexbox pour aligner l'image et le texte */
+  width: 100%; /* Prendre toute la largeur disponible */
+  flex-wrap: wrap; /* Permet à l'image et au texte de se superposer sur petits écrans */
+  gap: 150px;
+  margin-bottom: 50px;
+}
+
+.about-image {
+  max-width: 800px;
+  height: auto;
+  margin-left: 110px;
+  border: 4px solid transparent; /* Initial border */
+  border-radius: 15px; /* Optional: rounded corners */
+  animation: borderAnimation 4s infinite alternate; /* Animation applied */
+}
+
+.about-text {
+  text-align: left; /* Aligner le texte à gauche */
+  max-width: 650px; /* Limiter la largeur maximale du texte */
+  margin-top: 50px;
+}
+
+.about-text h1 {
+  font-size: 3rem; /* Taille du titre */
+  margin-bottom: 10px; /* Espace sous le titre */
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.about-text p {
+  font-size: 1.3rem; /* Taille de la police pour le texte */
+  line-height: 1.5; /* Hauteur de ligne pour aérer le texte */
+  margin-bottom: 15px; /* Espace sous chaque paragraphe */
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.contact-button {
+  background-color: #000; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px 20px; /* Espacement intérieur */
+  font-size: 1.1rem; /* Taille de la police */
+  cursor: pointer; /* Indiquer que c'est cliquable */
+  transition: background-color 0.3s; /* Effet de transition */
+}
+
+.contact-button:hover {
+  background-color: #4d4d4d; /* Couleur au survol */
+}
+
+/* Réglages pour les petits écrans */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Empile l'image et le texte */
+    text-align: center; /* Centre le texte pour les petits écrans */
+  }
+
+  .about-image {
+    margin-right: 0; /* Supprimer l'espacement à droite pour petits écrans */
+    margin-bottom: 20px; /* Ajouter un espace sous l'image */
+  }
+
+  .about-text {
+    text-align: center; /* Centre le texte sur petits écrans */
+  }
+}
+
+
+/* Réglages pour tablettes et téléphones (moins de 1000px) */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center; /* Centre les éléments */
+    text-align: center;
+    gap: 0; /* Supprime l'écart supplémentaire */
+  }
+
+  .about-image {
+    order: 1; /* Affiche l'image en premier */
+    margin: 0 auto 10px auto; /* Centre l'image et réduit l'espace en dessous */
+    max-width: 80%; /* Limite la largeur pour l'adaptation sur petits écrans */
+    height: auto;
+  }
+
+  .about-text {
+    order: 2; /* Affiche le texte en deuxième */
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Réglages pour petits téléphones (moins de 580px) */
+@media (max-width: 580px) {
+  .about-image {
+    max-width: 90%; /* Réduit encore plus la largeur de l'image sur très petits écrans */
+    margin-bottom: 10px; /* Réduit encore l'espace */
+  }
+
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .contact-button {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+}
+
+
+/* Réglages pour écrans entre 1080px et 1419px */
+@media (min-width: 1080px) and (max-width: 1419px) {
+  .about-content {
+    display: flex; /* Activer l'affichage en flexbox */
+    flex-direction: row; /* Affiche l'image et le texte sur la même ligne */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 30px; /* Ajuste l'espacement entre l'image et le texte */
+    padding: 20px; /* Ajoute un padding pour espacer les bords */
+  }
+
+  .about-image {
+    max-width: 50%; /* Ajuste la largeur de l'image pour occuper 50% */
+    margin: 0; /* Enlève les marges pour aligner l'image */
+  }
+
+  .about-text {
+    max-width: 45%; /* Ajuste la largeur du texte pour occuper 45% */
+    text-align: left; /* Aligne le texte à gauche */
+  }
+
+}
+
+
+
+/* Réglages pour tablettes et téléphones (moins de 1000px) */
+@media (max-width: 1080px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center; /* Centre les éléments */
+    text-align: center;
+    gap: 0; /* Supprime l'écart supplémentaire */
+  }
+
+  .about-image {
+    order: 1; /* Affiche l'image en premier */
+    margin: 0 auto 10px auto; /* Centre l'image et réduit l'espace en dessous */
+    max-width: 80%; /* Limite la largeur pour l'adaptation sur petits écrans */
+    height: auto;
+  }
+
+  .about-text {
+    order: 2; /* Affiche le texte en deuxième */
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-color: #b9b9b9; /* Starting color */
+    box-shadow: 0 0 10px rgba(119, 119, 119, 0.5); /* Optional: glow effect */
+  }
+  50% {
+    border-color: #3cb371; /* Intermediate color */
+    box-shadow: 0 0 20px rgba(60, 179, 113, 0.5);
+  }
+  100% {
+    border-color: #1e90ff; /* Final color */
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+  }
+}
