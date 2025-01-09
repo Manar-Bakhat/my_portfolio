@@ -1,14 +1,62 @@
 /* Le conteneur principal avec l'image de fond */
+
+/* Conteneur principal */
 .home-container {
-  height: 100vh; /* Prend toute la hauteur de la fenêtre */
-  background-image: url('../../../assets/images/bgH.png'); /* Le chemin vers ton image */
-  background-size: 100% 470px;
-  background-position: center; /* L'image est centrée */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  position: relative;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Peut être maintenu pour cacher les autres éléments qui débordent */
 }
+
+/* Animation d'arrière-plan */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,  #d1cfcf, #a1d5b2, #002715); /* Dégradé linéaire entre vert et bleu */
+  overflow: hidden;
+  z-index: -1;
+  animation: backgroundAnimation 5s ease-in-out infinite; /* Animation pour un fond animé */
+}
+
+
+/* Texte derrière */
+.text-slider-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  width: 100%; /* Pas besoin d'avoir une largeur double pour la continuité */
+  animation: slide-text 50s linear infinite;
+  white-space: nowrap; /* Assurer que le texte ne se coupe pas */
+}
+
+/* Texte défilant */
+.text-slider {
+  font-size: 17rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.1); /* Texte légèrement visible */
+  flex-shrink: 0; /* Empêche le texte de rétrécir */
+  text-align: center;
+  margin: 0;
+  display: inline-block; /* Assurer que chaque texte s'affiche en ligne */
+}
+
+/* Animation pour le conteneur de texte */
+@keyframes slide-text {
+  0% {
+    transform: translateX(0%); /* Commence à gauche */
+  }
+  100% {
+    transform: translateX(-100%); /* Défile complètement vers la gauche */
+  }
+}
+
 
 /* Contenu contenant le texte et l'image */
 .content {
@@ -21,12 +69,13 @@
 
 /* Style du texte */
 .home-text {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0) !important;
   font-size: 2rem;
   margin-left: -90px;
 }
 .home-text h1 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #000000 !important;
 }
 .home-text .text-style1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -43,15 +92,15 @@
 /* Style de l'image */
 .home-image {
   display: flex; /* Maintenir l'image visible par défaut */
+  width: 38%; /* Assurez-vous que l'image prend toute la largeur du conteneur */
+  height: 100%; /* Permet à l'image de s'adapter à la hauteur du conteneur */
+  justify-content: center; /* Centrer l'image si besoin */
 }
-
 .home-image img {
-  max-width: 100%; /* S'adapte à la taille du conteneur */
-  height: auto;
-  border-radius: 10px; /* Bords arrondis pour l'image */
-  flex: 1; /* Occuper l'autre partie disponible */
-  max-width: 500px; /* Limite la taille maximale de l'image */
-  margin-top: -90px;
+  width: 100%; /* L'image prend toute la largeur du conteneur */
+  height: 100%; /* L'image prend toute la hauteur du conteneur */
+  object-fit: cover; /* L'image couvre toute la zone sans être déformée */
+  border-radius: 10px; /* Bords arrondis */
 }
 
 .contact-button {
@@ -93,143 +142,184 @@
   color: #333; /* Couleur de survol pour GitHub */
 }
 
+
+
+/* Container for the scroll-down button */
+.scroll-down-container {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scroll-down button itself */
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid black;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50px;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+
+/* Arrow animation */
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid black;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+/* Scroll animation effect */
+@keyframes scroll-down {
+  0% {
+    top: 20%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 80%;
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  /* Conteneur principal */
   .home-container {
-    flex-direction: column; /* Empile le texte et l'image */
-    padding: 90px; /* Ajuste la marge intérieure */
-    background-image: url('../../../assets/images/bgH.png'); /* Image spécifique pour mobile */
-    background-size: cover; /* Adapte l'image à l'écran */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Pas de répétition */
+    flex-direction: column; /* Empile les éléments verticalement */
+    padding: 140px; /* Réduit les marges pour les petits écrans */
+    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+    background-size: cover;
   }
 
-  /* Contenu */
   .content {
-    flex-direction: column; /* Empile le texte et l'image */
+    flex-direction: column; /* Texte et image empilés */
     width: 100%; /* Prend toute la largeur */
-    margin: 0; /* Supprime les marges */
+    margin: 0;
   }
 
-  /* Image */
-  .home-image {
-    order: -1; /* Affiche l'image en premier */
-    margin-top: 0; /* Ajuste l'espace au-dessus */
-    justify-content: center; /* Centre l'image */
-  }
-
-  .home-image img {
-    max-width: 80%; /* Adapte l'image à l'écran */
-    margin: 0 auto; /* Centre l'image horizontalement */
-  }
-
-  /* Texte */
   .home-text {
-    margin-left: 0; /* Supprime la marge gauche */
-    text-align: center; /* Centre le texte */
+    text-align: center;
+    margin-left: 0;
   }
 
   .home-text h1 {
-    font-size: 1.8rem; /* Réduit la taille du titre */
+    font-size: 2.3rem; /* Taille réduite pour s'adapter aux petits écrans */
   }
 
   .home-text .text-style1 {
-    font-size: 1.5rem; /* Ajuste la taille */
-    color: #11a372;
-    margin-top: 3px;
+    font-size: 1.3rem;
+    margin-top: 10px;
   }
 
-  .home-text .text-style2 {
-    font-size: 1rem; /* Taille plus petite pour les écrans mobiles */
+  .home-image {
+    display: none; /* Cache complètement l'image sur les petits écrans */
   }
 
-  /* Bouton de contact */
   .contact-button {
-    font-size: 1rem; /* Réduit la taille de la police */
-    padding: 10px 30px; /* Réduit l'espacement intérieur */
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
-  /* Icônes des réseaux sociaux */
   .social-icons {
     justify-content: center; /* Centre les icônes */
-    gap: 15px; /* Espace entre les icônes */
-    margin-left: 0; /* Supprime la marge gauche */
+    gap: 15px;
   }
 
-  .social-icons a {
-    font-size: 1.6rem; /* Réduit la taille des icônes */
+  .scroll-down-container {
+    bottom: 30px; /* Ajuste la position du bouton de défilement */
   }
 }
 
 
 
-
-
-
-@media screen and (min-width: 770px) and (max-width: 1024px) {
-  /* Conteneur principal */
+/* ======= Styles pour les tablettes (entre 768px et 1024px) ======= */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .home-container {
-    flex-direction: column; /* Empile le texte et l'image */
-    padding: 160px; /* Ajuste la marge intérieure */
-    background-image: url('../../../assets/images/bgH.png'); /* Image spécifique pour tablette */
-    background-size: cover; /* Adapte l'image à l'écran */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Pas de répétition */
+    padding: 40px; /* Plus d'espace pour les tablettes */
+    flex-direction: column;
   }
 
-  /* Contenu */
   .content {
-    flex-direction: column; /* Empile le texte et l'image */
-    width: 100%; /* Prend toute la largeur */
-    margin: 0; /* Supprime les marges */
+    flex-direction: row; /* Réorganise les éléments en ligne */
+    align-items: center;
+    gap: 30px; /* Ajoute un écart entre texte et image */
   }
 
-  /* Image */
-  .home-image {
-    order: -1; /* Affiche l'image en premier */
-    margin-top: 0; /* Ajuste l'espace au-dessus */
-    justify-content: center; /* Centre l'image */
-  }
-
-  .home-image img {
-    max-width: 80%; /* Adapte l'image à l'écran */
-    margin: 0 auto; /* Centre l'image horizontalement */
-  }
-
-  /* Texte */
   .home-text {
-    margin-left: 0; /* Supprime la marge gauche */
-    text-align: center; /* Centre le texte */
+    text-align: center;
+    margin-left: 0;
   }
 
   .home-text h1 {
-    font-size: 1.8rem; /* Réduit la taille du titre */
+    font-size: 2.2rem;
   }
 
   .home-text .text-style1 {
-    font-size: 1.5rem; /* Ajuste la taille */
-    color: #11a372;
-    margin-top: 3px;
+    font-size: 1.4rem;
   }
 
-  .home-text .text-style2 {
-    font-size: 1rem; /* Taille plus petite pour les écrans mobiles */
+  .home-image {
+    max-width: 90%; /* Image prend la moitié de la largeur */
+    margin: 0 auto;
   }
 
-  /* Bouton de contact */
   .contact-button {
-    font-size: 1rem; /* Réduit la taille de la police */
-    padding: 10px 30px; /* Réduit l'espacement intérieur */
-  }
-
-  /* Icônes des réseaux sociaux */
-  .social-icons {
-    justify-content: center; /* Centre les icônes */
-    gap: 15px; /* Espace entre les icônes */
-    margin-left: 0; /* Supprime la marge gauche */
+    font-size: 1.1rem;
+    padding: 12px 30px;
   }
 
   .social-icons a {
-    font-size: 1.2rem; /* Réduit la taille des icônes */
+    font-size: 1.4rem; /* Augmente légèrement les icônes */
+  }
+
+  .scroll-down-container {
+    bottom: 100px;
   }
 }
+
+/* Footer styles */
+.footer {
+  background-color: #000000; /* Fond sombre */
+  color: white; /* Texte blanc */
+  text-align: center; /* Centrer le texte */
+  padding: 30px 0; /* Espacement au-dessus et en dessous du texte */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.highlight {
+  color: #11a372; /* Couleur rouge */
+  font-weight: bold; /* Texte en gras */
+  font-style: italic; /* Texte en italique */
+}
+
+

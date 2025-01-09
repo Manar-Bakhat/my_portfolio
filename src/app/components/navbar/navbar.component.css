@@ -1,6 +1,6 @@
 /* Styles de la navbar */
 .navbar {
-  background-color: #ffffff;
+  background: linear-gradient(to bottom, #fff9f9, #d1cfcf);
   position: sticky;
   top: 0;
   width: 100%;

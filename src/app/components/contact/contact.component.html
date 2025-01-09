@@ -8,8 +8,7 @@
             <!--  *******   Title Starts   *******  -->
 
             <div class="contactTitle">
-                <h2>Contact Me</h2>
-                <p>I am available for professional collaborations, project inquiries, or any opportunities to connect and grow together.</p>
+                <h2>Let's Contact</h2>
             </div>
 
             <!--  *******   Title Ends   *******  -->
@@ -55,8 +54,8 @@
             <!--  *******   Social Media Starts   *******  -->
 
             <div class="socialMedia">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Manar-Bakhat"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/manar-bakhat/"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
 
             <!--  *******   Social Media Ends   *******  -->
@@ -71,33 +70,41 @@
             
             <!--  *******   Form Starts   *******  -->
 
-            <form class="messageForm">
-                
+            <form class="messageForm" (ngSubmit)="onSubmit()" #contactForm="ngForm">
                 <div class="inputGroup halfWidth">
-                    <input type="text" name="" required="required">
-                    <label>Your Name</label>
+                  <input type="text" [(ngModel)]="contactData.name" name="name" required>
+                  <label>Your Name</label>
+                  <div *ngIf="contactForm.submitted && !contactData.name" class="error">
+                    Name is required.
+                  </div>
                 </div>
-
+              
                 <div class="inputGroup halfWidth">
-                    <input type="email" name="" required="required">
-                    <label>Email</label>
+                  <input type="email" [(ngModel)]="contactData.email" name="email" required>
+                  <label>Email</label>
+                  <div *ngIf="contactForm.submitted && !contactData.email" class="error">
+                    Email is required.
+                  </div>
                 </div>
-
+              
                 <div class="inputGroup fullWidth">
-                    <input type="text" name="" required="required">
-                    <label>Subject</label>
+                  <input type="text" [(ngModel)]="contactData.subject" name="subject">
+                  <label>Subject</label>
                 </div>
-
+              
                 <div class="inputGroup fullWidth">
-                    <textarea required="required"></textarea>
-                    <label>Say Something</label>
+                  <textarea [(ngModel)]="contactData.saySomething" name="saySomething"></textarea>
+                  <label>Say Something</label>
                 </div>
-
+              
                 <div class="inputGroup fullWidth">
-                    <button>Send Message</button>
+                  <button type="submit">Send Message</button>
                 </div>
-
-            </form>
+              
+                <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+                <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+              </form>
+              
 
             <!--  *******   Form Ends   *******  -->
         </section>
@@ -106,3 +113,5 @@
 
     </main>
 </div>
+
+

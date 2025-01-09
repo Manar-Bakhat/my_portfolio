@@ -1,0 +1,116 @@
+h1{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 80px;
+}
+/* Style for the swiper container */
+.swiper-container {
+  padding: 50px;
+  background-color: #000; 
+}
+
+/* Style for each individual slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Container for the projects in each slide */
+.projects-slide {
+  display: flex;
+  justify-content: center; /* Center the content */
+  width: 100%;
+}
+
+/* Style for each project */
+.project {
+  display: flex; /* Flexbox to align image and description */
+  justify-content: space-between; /* Space between image and description */
+  align-items: center; /* Center vertically */
+  width: 80%; /* Adjust width of the entire project card */
+  height: 400px; /* Increased height for the card */
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.05); /* Agrandissement subtil */
+  filter: grayscale(0.3); /* Applique un léger effet gris (30%) */
+  background-color: #fefffe; /* Ajoute un fond gris clair */
+  transition: transform 0.3s ease, filter 0.3s ease, background-color 0.3s ease;
+}
+
+/* Container for project image */
+.project-image-container {
+  width: 50%; /* Set width for the image container */
+  height: 100%; /* Ensure image container takes full height */
+}
+
+.project-image {
+  width: 100%;
+  height: 100%; /* Set image to fill the container's height */
+  object-fit: cover;
+}
+
+/* Container for project description */
+.project-info {
+  padding: 15px;
+  width: 45%; /* Set width for the description part */
+  height: 100%; /* Ensure description takes full height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the description */
+}
+
+/* Title style */
+.project-info h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px; /* Réduit l'espace sous le paragraphe */
+}
+
+/* Style pour le titre h4 */
+.project-info h4 {
+  font-size: 1.2rem; /* Taille du texte pour h4 */
+  color: #333;
+  margin-top: 0; /* Supprime la marge au-dessus de h4 */
+  margin-bottom: 10px; /* Ajuste la marge sous le h4 */
+}
+
+
+
+/* Style pour la liste non ordonnée (ul) */
+.project-info ul {
+  list-style-type: disc; /* Force les puces (points) */
+  padding-left: 20px; /* Décale la liste à gauche pour afficher les puces */
+  margin: 0; /* Supprime la marge */
+}
+
+/* Style pour chaque élément de la liste (li) */
+.project-info ul li {
+  font-size: 1rem; /* Définir la taille de police des éléments de liste */
+  color: #555; /* Couleur des éléments de liste */
+  margin-bottom: 8px; /* Espacement entre les éléments de liste */
+  line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+}
+
+.project-link {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Garde la couleur originale du texte */
+}
+.project-link:hover {
+  cursor: pointer; /* Change le curseur pour indiquer un lien cliquable */
+}
+
