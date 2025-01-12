@@ -24,9 +24,11 @@ export class ContactComponent implements OnInit {
   // Pour gérer les messages d'état
   successMessage: string = '';
   errorMessage: string = '';
+  showSuccessMessage: boolean = false; // Nouvelle variable pour contrôler l'affichage de la notification
 
   constructor(
-    private contactService: ContactService  ) {}
+    private contactService: ContactService
+  ) {}
 
   ngOnInit(): void {
     // Charger les contacts existants
@@ -53,6 +55,13 @@ export class ContactComponent implements OnInit {
         console.log('Contact soumis avec succès:', response);
         this.successMessage = 'Contact submitted successfully!';
         this.errorMessage = '';
+        this.showSuccessMessage = true; // Afficher la notification de succès
+
+        // Masquer la notification après 5 secondes
+        setTimeout(() => {
+          this.showSuccessMessage = false;
+        }, 5000); // 5000 ms = 5 secondes
+
         this.resetForm();
       },
       (error) => {

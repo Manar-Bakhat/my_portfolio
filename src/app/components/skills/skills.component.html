@@ -1,122 +1,32 @@
-<!--
-<div class="skills-section">
-    <h2>Skills I Use</h2>
-  
-    <div class="skills-category">
-      <h3>Backend</h3>
-      <div class="skills-row">
-        <div class="skill-item">
-          <img src="path-to-logo/net-logo.png" alt=".NET">
-          <p>.NET</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/springboot-logo.png" alt="Spring Boot">
-          <p>Spring Boot</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/django-logo.png" alt="Django">
-          <p>Django</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="skills-category">
-      <h3>Frontend</h3>
-      <div class="skills-row">
-        <div class="skill-item">
-          <img src="path-to-logo/angular-logo.png" alt="Angular">
-          <p>Angular</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/react-logo.png" alt="ReactJS">
-          <p>ReactJS</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="skills-category">
-      <h3>Database</h3>
-      <div class="skills-row">
-        <div class="skill-item">
-          <img src="path-to-logo/oracle-logo.png" alt="Oracle">
-          <p>Oracle</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/mysql-logo.png" alt="MySQL">
-          <p>MySQL</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/sqlserver-logo.png" alt="SQL Server">
-          <p>SQL Server</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/mongodb-logo.png" alt="MongoDB">
-          <p>MongoDB</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="skills-category">
-      <h3>Programming Languages</h3>
-      <div class="skills-row">
-        <div class="skill-item">
-          <img src="path-to-logo/c-logo.png" alt="C">
-          <p>C</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/csharp-logo.png" alt="C#">
-          <p>C#</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/php-logo.png" alt="PHP">
-          <p>PHP</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/java-logo.png" alt="Java">
-          <p>Java</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/python-logo.png" alt="Python">
-          <p>Python</p>
-        </div>
-        <div class="skill-item">
-          <img src="path-to-logo/javascript-logo.png" alt="JavaScript">
-          <p>JavaScript</p>
-        </div>
-      </div>
-    </div>
-  </div>
- --> 
-
- <div class="skills-container">
+<div class="skills-container">
   <div class="skills-carousel-section">
-    <h2>Skills I Use</h2>
-    <div class="carousel-container">
+    <h2 class="reveal">Skills I Use</h2>
+    <div class="carousel-container reveal">
       <!-- Bouton pour défiler à gauche -->
-      <button class="carousel-button prev" (click)="scrollCarousel('prev')">❮</button>
+      <button class="carousel-button prev reveal" (click)="scrollCarousel('prev')">❮</button>
 
       <!-- Carousel -->
       <div class="carousel" #carousel>
         <!-- Backend Tools -->
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <img src="../../../assets/images/icons/dotnet.png" alt=".NET">
           <p>.NET</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <img src="../../../assets/images/icons/spring.png" alt="Spring Boot">
           <p>Spring Boot</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <img src="../../../assets/images/icons/django.png" alt="Django">
           <p>Django</p>
         </div>
 
         <!-- Frontend Tools -->
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <img src="../../../assets/images/icons/angular.png" alt="Angular">
           <p>Angular</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <div class="icon">
             <img src="../../../assets/images/icons/react.png" alt="ReactJS">
           </div>
@@ -124,25 +34,25 @@
         </div>
 
         <!-- Database Tools -->
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <div class="icon2">
             <img src="../../../assets/images/icons/oracle.png" alt="Oracle">
           </div>
           <p>Oracle</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <div class="icon2">
             <img src="../../../assets/images/icons/mysql.png" alt="MySQL">
           </div>
           <p>MySQL</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <div class="icon">
             <img src="../../../assets/images/icons/sqlserver.png" alt="SQL Server">
           </div>
           <p>SQL Server</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <div class="icon2">
             <img src="../../../assets/images/icons/mongodb.png" alt="MongoDB">
           </div>
@@ -150,22 +60,20 @@
         </div>
 
         <!-- DevOps Tools -->
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <div class="icon2">
             <img src="../../../assets/images/icons/docker.png" alt="Docker">
           </div>
           <p>Docker</p>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item reveal">
           <img src="../../../assets/images/icons/kubernetes.png" alt="Kubernetes">
           <p>Kubernetes</p>
         </div>
       </div>
 
       <!-- Bouton pour défiler à droite -->
-      <button class="carousel-button next" (click)="scrollCarousel('next')">❯</button>
+      <button class="carousel-button next reveal" (click)="scrollCarousel('next')">❯</button>
     </div>
   </div>
 </div>
-
-  

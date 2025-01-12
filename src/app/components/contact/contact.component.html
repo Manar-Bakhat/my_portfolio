@@ -1,117 +1,97 @@
 <div class="container">
     <main class="row">
+      
+      <!--  *******   Left Section (Column) Starts   *******  -->
+      <section class="col left">
         
-        <!--  *******   Left Section (Column) Starts   *******  -->
-
-        <section class="col left">
-            
-            <!--  *******   Title Starts   *******  -->
-
-            <div class="contactTitle">
-                <h2>Let's Contact</h2>
+        <!--  *******   Title Starts   *******  -->
+        <div class="contactTitle reveal">
+          <h2>Let's Contact</h2>
+        </div>
+        <!--  *******   Title Ends   *******  -->
+  
+        <!--  *******   Contact Info Starts   *******  -->
+        <div class="contactInfo">
+          <div class="iconGroup reveal">
+            <div class="icon">
+              <i class="fas fa-phone"></i>
             </div>
-
-            <!--  *******   Title Ends   *******  -->
-
-            <!--  *******   Contact Info Starts   *******  -->
-
-            <div class="contactInfo">
-                
-                <div class="iconGroup">
-                    <div class="icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="details">
-                        <span>Phone</span>
-                        <span>+212 767554899</span>
-                    </div>
-                </div>
-
-                <div class="iconGroup">
-                    <div class="icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="details">
-                        <span>Email</span>
-                        <span>manarbakhat2001&#64;gmail.com</span>
-                    </div>
-                </div>
-
-                <div class="iconGroup">
-                    <div class="icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="details">
-                        <span>Location</span>
-                        <span>Morocco</span>
-                    </div>
-                </div>
-
+            <div class="details">
+              <span>Phone</span>
+              <span>+212 767554899</span>
             </div>
-
-            <!--  *******   Contact Info Ends   *******  -->
-
-            <!--  *******   Social Media Starts   *******  -->
-
-            <div class="socialMedia">
-                <a href="https://github.com/Manar-Bakhat"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/manar-bakhat/"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+  
+          <div class="iconGroup reveal">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
             </div>
+            <div class="details">
+              <span>Email</span>
+              <span>manarbakhat2001&#64;gmail.com</span>
+            </div>
+          </div>
+  
+          <div class="iconGroup reveal">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="details">
+              <span>Location</span>
+              <span>Morocco</span>
+            </div>
+          </div>
+        </div>
+        <!--  *******   Contact Info Ends   *******  -->
+  
+        <!--  *******   Social Media Starts   *******  -->
+        <div class="socialMedia reveal">
+          <a href="https://github.com/Manar-Bakhat"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/manar-bakhat/"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <!--  *******   Social Media Ends   *******  -->
+      </section>
+      <!--  *******   Left Section (Column) Ends   *******  -->
+  
+      <!--  *******   Right Section (Column) Starts   *******  -->
+      <section class="col right">
+        
+        <!--  *******   Form Starts   *******  -->
+        <form class="messageForm reveal" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div class="inputGroup halfWidth reveal">
+            <input type="text" [(ngModel)]="contactData.name" name="name" required>
+            <label>Your Name</label>
+         
+          </div>
+        
+          <div class="inputGroup halfWidth reveal">
+            <input type="email" [(ngModel)]="contactData.email" name="email" required>
+            <label>Email</label>
+         
+          </div>
+        
+          <div class="inputGroup fullWidth reveal">
+            <input type="text" [(ngModel)]="contactData.subject" name="subject">
+            <label>Subject</label>
+          </div>
+        
+          <div class="inputGroup fullWidth reveal">
+            <textarea [(ngModel)]="contactData.saySomething" name="saySomething"></textarea>
+            <label>Say Something</label>
+          </div>
+        
+          <div class="inputGroup fullWidth reveal">
+            <button type="submit">Send Message</button>
+          </div>
+    
+        </form>
 
-            <!--  *******   Social Media Ends   *******  -->
-
-        </section>
-
-        <!--  *******   Left Section (Column) Ends   *******  -->
-
-        <!--  *******   Right Section (Column) Starts   *******  -->
-
-        <section class="col right">
-            
-            <!--  *******   Form Starts   *******  -->
-
-            <form class="messageForm" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-                <div class="inputGroup halfWidth">
-                  <input type="text" [(ngModel)]="contactData.name" name="name" required>
-                  <label>Your Name</label>
-                  <div *ngIf="contactForm.submitted && !contactData.name" class="error">
-                    Name is required.
-                  </div>
-                </div>
-              
-                <div class="inputGroup halfWidth">
-                  <input type="email" [(ngModel)]="contactData.email" name="email" required>
-                  <label>Email</label>
-                  <div *ngIf="contactForm.submitted && !contactData.email" class="error">
-                    Email is required.
-                  </div>
-                </div>
-              
-                <div class="inputGroup fullWidth">
-                  <input type="text" [(ngModel)]="contactData.subject" name="subject">
-                  <label>Subject</label>
-                </div>
-              
-                <div class="inputGroup fullWidth">
-                  <textarea [(ngModel)]="contactData.saySomething" name="saySomething"></textarea>
-                  <label>Say Something</label>
-                </div>
-              
-                <div class="inputGroup fullWidth">
-                  <button type="submit">Send Message</button>
-                </div>
-              
-                <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
-                <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
-              </form>
-              
-
-            <!--  *******   Form Ends   *******  -->
-        </section>
-
-        <!--  *******   Right Section (Column) Ends   *******  -->
-
+        <!-- Notification de succès -->
+      <div *ngIf="showSuccessMessage" class="success-notification">
+        Message sent successfully!
+      </div>
+        <!--  *******   Form Ends   *******  -->
+      </section>
+      <!--  *******   Right Section (Column) Ends   *******  -->
     </main>
-</div>
-
-
+  </div>

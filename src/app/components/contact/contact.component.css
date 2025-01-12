@@ -33,8 +33,8 @@
 }
 section.left .contactTitle h2{
 	position: relative;
-	font-size: 28px;
-	color: #ffffff;
+	font-size: 35px;
+	color: #11a372;
 	display: inline-block;
 	margin-bottom: 25px;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -183,8 +183,10 @@ textarea::-webkit-scrollbar-thumb{
 .inputGroup:nth-child(4) label{
 	top: 2px;
 }
-.inputGroup input:focus ~ label, .inputGroup textarea:focus ~ label,
-.inputGroup input:valid ~ label, .inputGroup textarea:valid ~ label
+.inputGroup input:focus ~ label,
+.inputGroup textarea:focus ~ label,
+.inputGroup input:not(:placeholder-shown) ~ label,
+.inputGroup textarea:not(:placeholder-shown) ~ label 
 {
 	transform: translateY(-30px);
 	font-size: 16px;
@@ -221,3 +223,39 @@ textarea::-webkit-scrollbar-thumb{
 		margin: 0px;
 	}
 }
+
+/* Style pour la notification de succès */
+.success-notification {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #11a372; /* Couleur de fond */
+	color: #fff; /* Couleur du texte */
+	padding: 15px 25px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	animation: fadeInOut 5s ease-in-out;
+  }
+  
+  /* Animation pour faire apparaître et disparaître la notification */
+  @keyframes fadeInOut {
+	0% {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+	10% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+	90% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+	100% {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+  }
