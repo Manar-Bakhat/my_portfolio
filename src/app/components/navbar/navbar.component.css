@@ -44,6 +44,7 @@
   position: relative;
   padding: 14px 20px;
   display: inline-block;
+  cursor: pointer; /* Ajoute un curseur de type "main" */
 }
 
 .nav-links li a::after {
@@ -63,6 +64,7 @@
 
 .nav-links li a:hover {
   color: black;
+  cursor: pointer; /* Assure que le curseur reste en "main" au survol */
 }
 
 .burger-menu {
@@ -79,7 +81,7 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 90px;
     right: 0;
     background-color: white;
     width: 100%;
@@ -90,6 +92,29 @@
 
   .nav-links.open {
     display: flex;
+    background-color: #d1cfcf;
+  }
+
+  .nav-links li {
+    padding: 15px 0; /* Augmente l'espacement vertical entre les liens */
+  }
+
+  .nav-links li a {
+    font-size: 20px; /* Augmente la taille de la police des liens */
+    padding: 15px 0; /* Augmente l'espacement vertical des liens */
+    cursor: pointer; /* Ajoute un curseur de type "main" en mode téléphone */
+  }
+
+  .nav-links li:not(:last-child) {
+    border-bottom: 1px solid #000; /* Ajoute une ligne de séparation entre les liens */
+  }
+
+  .nav-links li a::after {
+    display: none; /* Désactive l'underline au survol */
+  }
+
+  .nav-links li a:hover::after {
+    display: none; /* Assure que l'underline ne réapparaît pas au survol */
   }
 
   .burger-menu {
@@ -97,6 +122,12 @@
   }
 
   .logo {
-    height: 60px; /* Diminue la taille du logo sur les écrans plus petits */
+    height: 80px; /* Diminue la taille du logo sur les écrans plus petits */
   }
+
+}
+
+/* Scroll compensé pour que le contenu ne soit pas masqué sous la navbar */
+section {
+  scroll-margin-top: 70px; /* Ajustez cette valeur pour qu'elle corresponde à la hauteur de votre navbar */
 }

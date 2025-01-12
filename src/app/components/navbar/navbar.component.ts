@@ -1,20 +1,23 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Importation nécessaire pour ngClass
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],  // Ajout de CommonModule ici pour activer ngClass
+  imports: [CommonModule],  // Assurez-vous d'importer CommonModule pour utiliser ngClass
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']  // Assurez-vous que c'est 'styleUrls' et non 'styleUrl'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isMenuOpen = false;  // Pour gérer l'état du menu burger
+  isMenuOpen = false;
   isSticky: boolean = false;
 
-  // Fonction pour ouvrir/fermer le menu burger
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -22,5 +25,18 @@ export class NavbarComponent {
     const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isSticky = scrollOffset > 50;
   }
-}
 
+  // Fonction pour faire défiler vers la section spécifique
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    const navbarHeight = document.querySelector('.navbar')?.clientHeight || 0;
+
+    if (element) {
+      const elementPosition = element.offsetTop - navbarHeight;  // Soustraction de la hauteur de la navbar
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'  // Pour un défilement fluide
+      });
+    }
+  }
+}

@@ -2,7 +2,10 @@
 
 <div class="swiper-container">
   <h1>My projects</h1>
-  <swiper-container loop="true" pagination="true" navigation="true">
+  <swiper-container [ngStyle]="{
+    '--swiper-navigation-color': '#fff',
+    '--swiper-pagination-color': '#fff'
+  }" loop="true" pagination="true" navigation="true">
     
 
     <!-- Slide 1 -->

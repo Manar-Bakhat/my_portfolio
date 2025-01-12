@@ -1,7 +1,7 @@
 h1{
   color: #fff;
   text-align: center;
-  margin-bottom: 80px;
+  font-size: 2.5rem;
 }
 /* Style for the swiper container */
 .swiper-container {
@@ -114,3 +114,17 @@ h1{
   cursor: pointer; /* Change le curseur pour indiquer un lien cliquable */
 }
 
+@media (max-width: 768px) {
+  .project-info {
+    display: none; /* Masque la section de texte */
+  }
+
+  .project-image-container {
+    width: 100%; /* L'image prend toute la largeur du slide */
+  }
+
+  .project {
+    height: auto; /* Ajuste la hauteur du projet en fonction de l'image */
+    justify-content: center; /* Centre l'image horizontalement */
+  }
+}

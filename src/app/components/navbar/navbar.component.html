@@ -1,16 +1,18 @@
-<nav class="navbar" [ngClass]="{'sticky': isSticky}">
+<nav class="navbar">
   <div class="navbar-container">
+    <!-- Logo -->
     <img src="../../../assets/images/logo.png" alt="Logo" class="logo" />
-    <!-- Menu burger pour petits écrans -->
+
+    <!-- Bouton de menu burger -->
     <button class="burger-menu" (click)="toggleMenu()">☰</button>
-    <ul class="nav-links" [ngClass]="{'open': isMenuOpen}">
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">SKILLS</a></li>
-      <li><a href="#">PROJECTS</a></li>
-      <li><a href="#">CONTACT</a></li>
+
+    <!-- Liens de navigation -->
+    <ul class="nav-links" [ngClass]="{ 'open': isMenuOpen }">
+      <li><a (click)="scrollToSection('home'); closeMenu()">HOME</a></li>
+      <li><a (click)="scrollToSection('about'); closeMenu()">ABOUT</a></li>
+      <li><a (click)="scrollToSection('skills'); closeMenu()">SKILLS</a></li>
+      <li><a (click)="scrollToSection('projects'); closeMenu()">PROJECTS</a></li>
+      <li><a (click)="scrollToSection('contact'); closeMenu()">CONTACT</a></li>
     </ul>
   </div>
 </nav>
-
-

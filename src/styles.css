@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+/* Couleur des flèches de navigation */
+:root {
+    --swiper-navigation-color: #11a372; /* Rouge */
+    --swiper-pagination-color: #11a372; /* Rouge */
+  }
+  

@@ -72,10 +72,13 @@
   color: rgb(0, 0, 0) !important;
   font-size: 2rem;
   margin-left: -90px;
+  margin-top: 140px;
 }
 .home-text h1 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #000000 !important;
+  margin-right: 50px;
+
 }
 .home-text .text-style1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -92,7 +95,7 @@
 /* Style de l'image */
 .home-image {
   display: flex; /* Maintenir l'image visible par défaut */
-  width: 38%; /* Assurez-vous que l'image prend toute la largeur du conteneur */
+  width: 39%; /* Assurez-vous que l'image prend toute la largeur du conteneur */
   height: 100%; /* Permet à l'image de s'adapter à la hauteur du conteneur */
   justify-content: center; /* Centrer l'image si besoin */
 }
@@ -209,7 +212,7 @@
   .home-container {
     flex-direction: column; /* Empile les éléments verticalement */
     padding: 140px; /* Réduit les marges pour les petits écrans */
-    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+    height: 45vh; /* Ajuste automatiquement la hauteur en fonction du contenu */
     background-size: cover;
   }
 
@@ -220,17 +223,23 @@
   }
 
   .home-text {
+    margin-top: -80px;
     text-align: center;
     margin-left: 0;
+    display: flex; /* Utiliser flexbox */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center; /* Centrer horizontalement */
   }
 
   .home-text h1 {
     font-size: 2.3rem; /* Taille réduite pour s'adapter aux petits écrans */
+    margin-right: 0; /* Supprimer la marge droite */
   }
 
   .home-text .text-style1 {
     font-size: 1.3rem;
     margin-top: 10px;
+    font-weight: bold;
   }
 
   .home-image {
@@ -243,13 +252,19 @@
   }
 
   .social-icons {
-    justify-content: center; /* Centre les icônes */
-    gap: 15px;
+    display: flex; /* Utiliser flexbox */
+    justify-content: center; /* Centre les icônes horizontalement */
+    align-items: center; /* Centre les icônes verticalement */
+    gap: 15px; /* Espace entre les icônes */
+    margin: 0 auto; /* Centre le conteneur des icônes */
+    padding: 0; /* Supprime le padding par défaut */
+    margin-top: 30px;
   }
 
   .scroll-down-container {
     bottom: 30px; /* Ajuste la position du bouton de défilement */
   }
+
 }
 
 
