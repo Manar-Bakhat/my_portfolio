@@ -232,7 +232,7 @@
   }
 
   .home-text h1 {
-    font-size: 2.3rem; /* Taille réduite pour s'adapter aux petits écrans */
+    font-size: 2rem; /* Taille réduite pour s'adapter aux petits écrans */
     margin-right: 0; /* Supprimer la marge droite */
   }
 
@@ -265,99 +265,6 @@
     bottom: 30px; /* Ajuste la position du bouton de défilement */
   }
 
-}
-
-@media screen and (max-width: 768px) {
-  .home-container {
-    flex-direction: column; /* Empile les éléments verticalement */
-    padding: 140px; /* Réduit les marges pour les petits écrans */
-    height: 45vh; /* Ajuste automatiquement la hauteur en fonction du contenu */
-    background-size: cover;
-  }
-
-  .content {
-    flex-direction: column; /* Texte et image empilés */
-    width: 100%; /* Prend toute la largeur */
-    margin: 0;
-  }
-
-  .home-text {
-    margin-top: -80px;
-    text-align: center;
-    margin-left: 0;
-    display: flex; /* Utiliser flexbox */
-    flex-direction: column; /* Aligner les éléments verticalement */
-    align-items: center; /* Centrer horizontalement */
-  }
-
-  .home-text h1 {
-    font-size: 2.3rem; /* Taille réduite pour s'adapter aux petits écrans */
-    margin-right: 0; /* Supprimer la marge droite */
-  }
-
-  .home-text .text-style1 {
-    font-size: 1.3rem;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  .home-image {
-    display: none; /* Cache complètement l'image sur les petits écrans */
-  }
-
-  .contact-button {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-
-  .social-icons {
-    display: flex; /* Utiliser flexbox */
-    justify-content: center; /* Centre les icônes horizontalement */
-    align-items: center; /* Centre les icônes verticalement */
-    gap: 15px; /* Espace entre les icônes */
-    margin: 0 auto; /* Centre le conteneur des icônes */
-    padding: 0; /* Supprime le padding par défaut */
-    margin-top: 30px;
-  }
-
-  .scroll-down-container {
-    bottom: 30px; /* Ajuste la position du bouton de défilement */
-  }
-}
-
-/* Media query pour les très petits écrans (moins de 480px) */
-@media screen and (max-width: 480px) {
-  .home-container {
-    padding: 80px 20px; /* Réduit encore plus les marges */
-    height: auto; /* Ajuste la hauteur automatiquement */
-  }
-
-  .home-text {
-    margin-top: -40px; /* Ajuste la marge supérieure */
-  }
-
-  .home-text h1 {
-    font-size: 2rem; /* Taille de police encore plus petite */
-  }
-
-  .home-text .text-style1 {
-    font-size: 1.1rem; /* Taille de police réduite */
-    margin-top: 8px; /* Ajuste la marge supérieure */
-  }
-
-  .contact-button {
-    font-size: 0.9rem; /* Taille de police réduite */
-    padding: 8px 16px; /* Ajuste le padding */
-  }
-
-  .social-icons {
-    gap: 10px; /* Réduit l'espace entre les icônes */
-    margin-top: 20px; /* Ajuste la marge supérieure */
-  }
-
-  .scroll-down-container {
-    bottom: 20px; /* Ajuste la position du bouton de défilement */
-  }
 }
 
 
