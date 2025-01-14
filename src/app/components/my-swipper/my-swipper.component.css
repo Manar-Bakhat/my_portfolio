@@ -1,0 +1,49 @@
+/* Styles pour les diapositives */
+.blue-slide {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.yellow-slide {
+  background-color: yellow;
+  color: black;
+  text-align: center;
+  padding: 50px;
+}
+
+.green-slide {
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+/* Changer la couleur des flèches de navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff0000; /* Rouge */
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 50%; /* Rendre les boutons ronds */
+  width: 40px; /* Largeur */
+  height: 40px; /* Hauteur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Changer la couleur des bullets de pagination */
+.swiper-pagination-bullet {
+  background-color: #ff0000; /* Rouge */
+  opacity: 0.5; /* Transparence */
+  width: 12px; /* Largeur */
+  height: 12px; /* Hauteur */
+  margin: 0 8px; /* Espacement entre les bullets */
+}
+
+/* Changer la couleur du bullet actif */
+.swiper-pagination-bullet-active {
+  background-color: #00ff00; /* Vert */
+  opacity: 1; /* Pleine opacité */
+}

@@ -1,0 +1,25 @@
+/* src/assets/css/swiper-custom.css */
+
+/* Changer la couleur des boutons */
+:root {
+    --swiper-theme-color: #ff0000; /* Rouge */
+  }
+  
+  /* Personnalisation des boutons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent */
+    border-radius: 50%; /* Boutons ronds */
+    width: 40px; /* Largeur */
+    height: 40px; /* Hauteur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animation */
+  }
+  
+  /* Style au survol */
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background-color: rgba(255, 0, 0, 0.8); /* Fond au survol */
+  }

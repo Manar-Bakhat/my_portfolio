@@ -1,15 +1,17 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 html {
   font-size: 10px;
-  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+}
+
+/* Police générale pour le corps du texte */
+body {
+  font-family: "Nunito", sans-serif; /* Police moderne et lisible pour le texte général */
 }
 
 a {
@@ -31,6 +33,7 @@ img {
   object-fit: cover;
 }
 
+/* Style pour les paragraphes */
 p {
   color: black;
   font-size: 1.4rem;
@@ -38,11 +41,13 @@ p {
   line-height: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.05rem;
+  font-family: "Roboto", sans-serif; /* Police moderne et lisible pour les paragraphes */
 }
 
+/* Style pour les titres de section */
 .section-title {
   font-size: 4rem;
-  font-family: 300;
+  font-family: "Raleway", sans-serif; /* Police élégante pour les titres */
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -54,6 +59,7 @@ p {
   color: #11a372;
 }
 
+/* Style pour les boutons (CTA) */
 .cta {
   display: inline-block;
   padding: 10px 30px;
@@ -64,8 +70,8 @@ p {
   letter-spacing: 0.1rem;
   margin-top: 30px;
   transition: 0.3s ease background-color, color;
-  /* color: black; */
   color: white;
+  font-family: "Poppins", sans-serif; /* Police moderne et géométrique pour les boutons */
 }
 
 .cta:hover {
@@ -73,22 +79,22 @@ p {
   background-color: #11a372;
 }
 
+/* Style pour le titre de la marque */
 .brand h1 {
   font-size: 3rem;
   text-transform: uppercase;
   color: white;
+  font-family: "Raleway", sans-serif; /* Police élégante pour le titre de la marque */
 }
 
 .brand h1 span {
   color: #11a372;
 }
 
-
-
-/* about section */
+/* Section À propos */
 #about {
-  background-color: #000000; /* Couleur de fond */
-  position: relative; /* Nécessaire pour gérer les enfants positionnés */
+  background-color: #000000;
+  position: relative;
 }
 
 #about .about {
@@ -100,13 +106,13 @@ p {
 }
 
 #about .col-left {
-  position: relative; /* Nécessaire pour positionner le pseudo-élément correctement */
-  z-index: 0; /* Assure que le cadre reste sous l'image */
+  position: relative;
+  z-index: 0;
 }
 
 #about .about-img {
-  position: relative; /* Nécessaire pour que l'image reste au-dessus du cadre */
-  z-index: 1; /* Place l'image au-dessus du cadre */
+  position: relative;
+  z-index: 1;
 }
 
 #about .col-right {
@@ -119,11 +125,13 @@ p {
   letter-spacing: 0.2rem;
   margin-bottom: 10px;
   color: #fff;
+  font-family: "Poppins", sans-serif; /* Police moderne pour les sous-titres */
 }
 
 #about .col-right p {
   margin-bottom: 20px;
   color: #fff;
+  font-family: "Roboto", sans-serif; /* Police lisible pour les paragraphes */
 }
 
 #about .col-right .cta {
@@ -147,8 +155,8 @@ p {
   top: 19px;
   height: 98%;
   width: 98%;
-  border: 7px solid #11a372; /* Cadre rouge */
-  z-index: -1; /* Place le pseudo-élément juste sous l'image, mais au-dessus du fond */
+  border: 7px solid #11a372;
+  z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
@@ -177,7 +185,61 @@ p {
 
   #about .col-right h1 {
     text-align: left;
-     color: #fff;
+    color: #fff;
   }
 }
 
+@media screen and (max-width: 767px) {
+  /* Réduire la taille de la police générale */
+  html {
+    font-size: 8px; /* Réduit la taille de base pour les petits écrans */
+  }
+
+  /* Ajuster les titres de section */
+  .section-title {
+    font-size: 3rem; /* Réduit la taille du titre de section */
+  }
+
+  /* Ajuster les paragraphes */
+  p {
+    font-size: 1.2rem; /* Réduit la taille du texte */
+    line-height: 2rem; /* Ajuste l'interligne */
+  }
+
+  /* Ajuster les boutons (CTA) */
+  .cta {
+    font-size: 1.6rem; /* Réduit la taille du bouton */
+    padding: 8px 16px; /* Ajuste le padding du bouton */
+  }
+
+  /* Ajuster le titre de la marque */
+  .brand h1 {
+    font-size: 2.5rem; /* Réduit la taille du titre de la marque */
+  }
+
+  /* Ajuster la section À propos */
+  #about .about {
+    padding: 50px 20px; /* Réduit le padding */
+  }
+
+  #about .col-right h2 {
+    font-size: 1.6rem; /* Réduit la taille du sous-titre */
+  }
+
+  #about .col-right p {
+    font-size: 1.2rem; /* Réduit la taille du texte */
+    line-height: 2rem; /* Ajuste l'interligne */
+  }
+
+  #about .col-right .cta {
+    font-size: 1.6rem; /* Réduit la taille du bouton */
+    padding: 8px 16px; /* Ajuste le padding du bouton */
+  }
+
+  /* Ajuster le cadre autour de l'image */
+  #about .col-left .about-img::after {
+    left: -15px; /* Réduit le décalage du cadre */
+    top: 15px; /* Réduit le décalage du cadre */
+    border: 5px solid #11a372; /* Réduit l'épaisseur du cadre */
+  }
+}
