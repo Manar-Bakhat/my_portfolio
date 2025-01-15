@@ -8,7 +8,9 @@ import { ContactModel } from '../models/contact.model';
 })
 export class ContactService {
 
-  private apiUrl = 'https://localhost:7156/api/Contact'; // Remplacez par l'URL de votre API
+  //private apiUrl = 'https://localhost:7156/api/Contact'; // Remplacez par l'URL de votre API
+
+  private apiUrl = 'http://myportfolio.somee.com/api/Contact'; // URL de ton backend sur Somee
 
   constructor(private http: HttpClient) {}
 
